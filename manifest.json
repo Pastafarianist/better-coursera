@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Better Coursera",
+  "version": "0.0.1",
+  "description": "Automatically enables subtitles in Coursera videos",
+
+  "permissions": [
+    "http://class.coursera.org/",
+    "https://class.coursera.org/"
+  ],
+
+  "content_scripts": [
+    {
+        "matches": ["http://class.coursera.org/*/lecture/*","https://class.coursera.org/*/lecture/*"],
+        "js": ["main.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }
+  ]
+}
