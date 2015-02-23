@@ -1,5 +1,5 @@
 var prefix = 'mep_0_captions_';
-var priorities = ['en', 'fr', 'es', 'ru'];
+var priorities = ['en', 'fr', 'es', 'ru', 'none'];
 
 var findAllLanguages = function() {
 	var subsDivAll = document.getElementsByClassName('mejs-captions-selector');
@@ -21,10 +21,16 @@ var enableSubtitles = function() {
 		if(subs_input) {
 			// console.log('Clicking ' + input_id);
 			subs_input.click();
+			document.getElementsByClassName('mejs-captions-selector')[0].style.visibility = 'hidden';
 			clearInterval(intervalID);
 			break;
 		}
 	}
+	attempts += 1;
+	if(attempts > 60) {
+		clearInterval(intervalID);
+	}
 }
 
+var attempts = 0;
 var intervalID = setInterval(enableSubtitles, 1000);
