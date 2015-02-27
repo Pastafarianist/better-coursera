@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Better Coursera",
-  "version": "0.0.1",
+  "version": "0.1",
   "description": "Automatically enables subtitles in Coursera videos",
 
   "permissions": [

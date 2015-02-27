@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Better Coursera
 // @namespace    https://vk.com/pastafarianist
-// @version      0.0.1
+// @version      0.1
 // @description  Automatically enables subtitles in Coursera videos
-// @author       You
+// @author       Pastafarianist
 // @match        https://class.coursera.org/*/lecture/*
 // @grant        none
 // ==/UserScript==
