@@ -1,5 +1,15 @@
+// ==UserScript==
+// @name         Better Coursera
+// @namespace    https://vk.com/pastafarianist
+// @version      0.0.1
+// @description  Automatically enables subtitles in Coursera videos
+// @author       You
+// @match        https://class.coursera.org/*/lecture/*
+// @grant        none
+// ==/UserScript==
+
 var prefix = 'mep_0_captions_';
-var priorities = ['en', 'fr', 'es', 'ru', 'none'];
+var priorities = ['en', 'fr', 'es', 'ru'];
 
 var findAllLanguages = function() {
 	var subsDivAll = document.getElementsByClassName('mejs-captions-selector');
@@ -19,7 +29,7 @@ var enableSubtitles = function() {
 		var input_id = prefix + priorities[i];
 		var subs_input = document.getElementById(input_id);
 		if(subs_input) {
-			// console.log('Clicking ' + input_id);
+			console.log('Clicking ' + input_id);
 			subs_input.click();
 			document.getElementsByClassName('mejs-captions-selector')[0].style.visibility = 'hidden';
 			clearInterval(intervalID);
